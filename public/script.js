@@ -283,6 +283,27 @@ async function submitAccessCode() {
   }
 }
 
+// Handle subscription email buttons
+function handleSubscribeEmail() {
+  console.log("Setting up subscription email buttons");
+  const subscribeButtons = document.querySelectorAll('.subscribe-btn');
+  subscribeButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      if (!currentUser) {
+        showMessage("subscription-error", "Please log in to subscribe.");
+        showLoginScreen();
+        return;
+      }
+      const plan = button.getAttribute('data-plan');
+      const subject = encodeURIComponent('Subscription Request for Pharmacy Technician Quiz');
+      const body = encodeURIComponent(`${currentUser.username} wants to subscribe to the ${plan}`);
+      const mailtoLink = `mailto:shefzlaw1234@gmail.com?subject=${subject}&body=${body}`;
+      console.log(`Generated mailto link: ${mailtoLink}`);
+      window.location.href = mailtoLink;
+    });
+  });
+}
+
 // Handle free user button click
 function proceedAsFreeUser() {
   console.log("Proceeding as free user");
@@ -541,6 +562,7 @@ document.addEventListener("DOMContentLoaded", () => {
         console.error(`Element with ID ${id} not found`);
       }
     });
+    handleSubscribeEmail(); // Add subscription email button listeners
   } catch (error) {
     console.error("Event listener setup error:", error);
   }
