@@ -1,344 +1,41 @@
-/* Root variables for consistent theming */
-:root {
-  --primary-color: #1e40af; /* Deep blue for professional look */
-  --secondary-color: #059669; /* Green for buttons and success states */
-  --accent-color: #b91c1c; /* Red for errors/warnings */
-  --text-color: #1f2937; /* Dark gray for readability */
-  --background-color: #f9fafb; /* Light neutral background */
-  --card-background: #ffffff; /* White for cards */
-  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
-  --transition: all 0.3s ease;
-  --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-}
-
-/* Global reset and base styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
-  font-family: var(--font-primary);
-  color: var(--text-color);
-  background-color: var(--background-color);
-  line-height: 1.6;
-  font-size: 16px;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f0f0f0;
 }
-
-/* Header */
-header {
-  background-color: var(--primary-color);
-  color: white;
+.container {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  width: 300px;
   text-align: center;
-  padding: 1.5rem;
-  box-shadow: var(--shadow);
 }
-
-header h1 {
-  font-size: 1.75rem;
-  font-weight: 600;
-}
-
-/* Containers for screens */
-#login-screen,
-#register-screen,
-#subscription-screen,
-#start-screen,
-#quiz-screen,
-#result-screen {
-  max-width: 640px;
-  margin: 2rem auto;
-  padding: 1.5rem;
-  background: var(--card-background);
-  border-radius: 12px;
-  box-shadow: var(--shadow);
-  transition: var(--transition);
-}
-
-/* Form group */
-.form-group {
-  margin-bottom: 1.25rem;
-}
-
-.form-group label {
+input, button {
   display: block;
-  font-weight: 500;
-  margin-bottom: 0.5rem;
-  color: var(--text-color);
-}
-
-.form-group input,
-.form-group select {
   width: 100%;
-  padding: 0.75rem;
-  border: 1px solid #d1d5db;
-  border-radius: 6px;
-  font-size: 1rem;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  margin: 10px 0;
+  padding: 10px;
 }
-
-.form-group input:focus,
-.form-group select:focus {
-  outline: none;
-  border-color: var(--primary-color);
-  box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.2);
-}
-
-/* Buttons */
 button {
-  background-color: var(--primary-color);
+  background-color: #28a745;
   color: white;
   border: none;
-  padding: 0.75rem 1.5rem;
-  border-radius: 6px;
-  font-size: 1rem;
-  font-weight: 500;
   cursor: pointer;
-  transition: var(--transition);
 }
-
-button:hover:not(:disabled) {
-  background-color: #1e3a8a;
-  transform: translateY(-1px);
+button:hover {
+  background-color: #218838;
 }
-
-button:disabled {
-  background-color: #9ca3af;
-  cursor: not-allowed;
+#paystack-pay-btn {
+  background-color: #0052cc;
 }
-
-/* Subscription buttons */
-.subscribe-btn {
-  background-color: var(--secondary-color);
-  margin-left: 0.75rem;
+#paystack-pay-btn:hover {
+  background-color: #003d99;
 }
-
-.subscribe-btn:hover:not(:disabled) {
-  background-color: #047857;
-  transform: translateY(-1px);
-}
-
-/* Warning and success messages */
-.warning {
-  color: var(--accent-color);
-  font-size: 0.875rem;
-  margin-top: 0.5rem;
-  padding: 0.5rem;
-  border: 1px solid var(--accent-color);
-  border-radius: 4px;
-  display: none;
-}
-
-.success {
-  color: var(--secondary-color);
-  font-size: 0.875rem;
-  margin-top: 0.5rem;
-  padding: 0.5rem;
-  border: 1px solid var(--secondary-color);
-  border-radius: 4px;
-}
-
-/* Timer */
-.timer {
-  font-weight: 600;
-  color: var(--text-color);
-  margin-bottom: 1rem;
-  font-size: 1.1rem;
-}
-
-/* Quiz options */
-.option {
-  display: block;
-  width: 100%;
-  margin: 0.5rem 0;
-  padding: 0.75rem;
-  border: 1px solid #d1d5db;
-  border-radius: 6px;
-  background: var(--card-background);
-  cursor: pointer;
-  color: black; /* Preserved from your GitHub edit */
-  font-size: 1rem;
-  transition: var(--transition);
-}
-
-.option:hover:not(.correct, .incorrect) {
-  background: #f3f4f6;
-  border-color: var(--primary-color);
-}
-
-.option.correct {
-  background: var(--secondary-color);
-  color: white;
-  border-color: var(--secondary-color);
-}
-
-.option.incorrect {
-  background: var(--accent-color);
-  color: white;
-  border-color: var(--accent-color);
-}
-
-/* Navigation */
-.navigation {
-  display: flex;
-  gap: 1rem;
-  justify-content: space-between;
-  margin-top: 1.5rem;
-}
-
-/* Subscription instructions */
-.code-instructions {
-  font-size: 0.9rem;
-  line-height: 1.6;
-  margin-bottom: 1rem;
-}
-
-.code-instructions ol {
-  padding-left: 1.5rem;
-}
-
-.email-link,
-.phone-link {
-  color: var(--primary-color);
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.email-link:hover,
-.phone-link:hover {
-  text-decoration: underline;
-}
-
-/* AdSense ad */
-#ad-container {
-  margin-top: 2rem;
-  text-align: center;
-}
-
-.adsbygoogle {
-  width: 100%;
-  max-width: 640px;
-  margin: 0 auto;
-  min-height: 100px; /* Adjusted for better ad fit */
-}
-
-/* Welcome popup */
-.welcome-popup {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: var(--card-background);
-  padding: 1.5rem;
-  border-radius: 12px;
-  box-shadow: var(--shadow);
-  z-index: 1000;
-  text-align: center;
-  max-width: 400px;
-}
-
-.welcome-popup h3 {
-  font-size: 1.25rem;
-  margin-bottom: 0.75rem;
-}
-
-.welcome-popup p {
-  font-size: 0.9rem;
-  margin-bottom: 1rem;
-}
-
-.welcome-popup button {
-  background-color: var(--secondary-color);
-}
-
-.welcome-popup button:hover {
-  background-color: #047857;
-}
-
-/* Responsive design */
-@media (max-width: 768px) {
-  #login-screen,
-  #register-screen,
-  #subscription-screen,
-  #start-screen,
-  #quiz-screen,
-  #result-screen {
-    margin: 1rem;
-    padding: 1.25rem;
-  }
-
-  header h1 {
-    font-size: 1.5rem;
-  }
-
-  button,
-  .subscribe-btn {
-    padding: 0.6rem 1.2rem;
-    font-size: 0.95rem;
-  }
-
-  .adsbygoogle {
-    max-width: 100%;
-  }
-}
-
-@media (max-width: 480px) {
-  #login-screen,
-  #register-screen,
-  #subscription-screen,
-  #start-screen,
-  #quiz-screen,
-  #result-screen {
-    margin: 0.5rem;
-    padding: 1rem;
-  }
-
-  .form-group input,
-  .form-group select {
-    padding: 0.6rem;
-    font-size: 0.9rem;
-  }
-
-  .navigation {
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
-  .subscribe-btn {
-    margin-left: 0;
-    margin-top: 0.5rem;
-    width: 100%;
-  }
-}
-
-/* Accessibility enhancements */
-button:focus,
-input:focus,
-select:focus,
-.option:focus {
-  outline: 2px solid var(--primary-color);
-  outline-offset: 2px;
-}
-
-.warning[role="alert"],
-.success[role="alert"] {
-  font-weight: 500;
-}
-
-/* Animation for screen transitions */
-#login-screen,
-#register-screen,
-#subscription-screen,
-#start-screen,
-#quiz-screen,
-#result-screen {
-  opacity: 0;
-  animation: fadeIn 0.5s ease forwards;
-}
-
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-  }
+#message {
+  color: red;
 }
