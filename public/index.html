@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pharmacy Technician National Prep Quiz</title>
     <link rel="stylesheet" href="styles.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9712711078211881" crossorigin="anonymous"></script>
 </head>
 <body>
     <header>
@@ -22,8 +23,8 @@
             <input type="password" id="login-password" required>
         </div>
         <button id="login-btn">Login</button>
-        <p><a href="#" id="show-register">Don't have an account? Register here</a></p>
-        <p id="login-error" class="warning"></p>
+        <p><a href="#" id="show-register" role="button">Don't have an account? Register here</a></p>
+        <p id="login-error" class="warning" role="alert"></p>
     </div>
     <div id="register-screen" style="display: none;">
         <h2>Register</h2>
@@ -36,25 +37,31 @@
             <input type="password" id="register-password" required>
         </div>
         <button id="register-btn">Register</button>
-        <p><a href="#" id="show-login">Already have an account? Login here</a></p>
-        <p id="register-error" class="warning"></p>
+        <p><a href="#" id="show-login" role="button">Already have an account? Login here</a></p>
+        <p id="register-error" class="warning" role="alert"></p>
     </div>
     <div id="subscription-screen" style="display: none;">
         <h2>Unlock Full Access</h2>
         <p class="code-instructions">
             Free users can access 15 questions per course. For full access (25, 50, or 100 questions), subscribe by following these steps:
             <ol>
-                <li>Email <a href="mailto:shefzlaw1234@gmail.com">shefzlaw1234@gmail.com</a> to receive payment details for your chosen plan (NGN 1000 for 3 months or NGN 2000 for 7 months).</li>
-                <li>Make the payment as instructed.</li>
+                <li>Select your preferred plan below and click to email <span class="email-link">shefzlaw1234@gmail.com</span> with your subscription request.</li>
+                <li>Make the payment as instructed in the response.</li>
                 <li>Call <a href="tel:07043846346" class="phone-link">07043846346</a> to confirm your payment and receive your access code.</li>
             </ol>
         </p>
         <div class="form-group">
             <label>Subscription Plan:</label>
-            <input type="radio" name="subscription-plan" id="plan-3months" value="3" required>
-            <label for="plan-3months">3 Months (NGN 1000)</label><br>
-            <input type="radio" name="subscription-plan" id="plan-7months" value="7">
-            <label for="plan-7months">7 Months (NGN 2000)</label>
+            <div>
+                <input type="radio" name="subscription-plan" id="plan-3months" value="3" required>
+                <label for="plan-3months">3 Months (NGN 1000)</label>
+                <button class="subscribe-btn" data-plan="3 Months (NGN 1000)">Email to Subscribe</button>
+            </div>
+            <div>
+                <input type="radio" name="subscription-plan" id="plan-7months" value="7">
+                <label for="plan-7months">7 Months (NGN 2000)</label>
+                <button class="subscribe-btn" data-plan="7 Months (NGN 2000)">Email to Subscribe</button>
+            </div>
         </div>
         <div class="form-group">
             <label for="access-code">Access Code:</label>
@@ -63,7 +70,7 @@
         <button id="submit-code-btn">Submit Code</button>
         <button id="free-user-btn">I’m a Free User</button>
         <p class="warning">Warning: Do not share your access code with others, as it may lead to restricted access.</p>
-        <p id="subscription-error" class="warning"></p>
+        <p id="subscription-error" class="warning" role="alert"></p>
     </div>
     <div id="start-screen" style="display: none;">
         <h2>Start Quiz</h2>
@@ -88,8 +95,19 @@
             <select id="question-count" required></select>
         </div>
         <button id="start-btn">Start Quiz</button>
-        <p id="start-error" class="warning"></p>
-        <div id="ad-container"></div>
+        <p id="start-error" class="warning" role="alert"></p>
+        <div id="ad-container">
+            <!-- google ads -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-9712711078211881"
+                 data-ad-slot="7245161040"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
     </div>
     <div id="quiz-screen" style="display: none;">
         <div class="timer">Time Left: <span id="time-left">00:00</span></div>
