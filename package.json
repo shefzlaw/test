@@ -1,0 +1,14 @@
+{
+  "name": "pharmacy-quiz",
+  "version": "1.0.0",
+  "description": "Pharmacy Technician National Prep Quiz",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^7.0.0",
+    "bcryptjs": "^2.4.3"
+  }
+}
