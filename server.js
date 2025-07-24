@@ -10,7 +10,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 // MongoDB Connection
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb+srv://moradeyo:moradeyo@moradeyo.p5y2t3d.mongodb.net/shefzlaw12thirty4?retryWrites=true&w=majority&appName=moradeyo';
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb+srv://moradeyo:moradeyo@moradeyo.p5y2t3d.mongodb.net/shefzlaw12thirty4?retryWrites=true&w=majority&appName=moradeyo
+';
 mongoose.connect(MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log('Connected to MongoDB'))
   .catch(err => console.error('MongoDB connection error:', err));
@@ -27,87 +28,37 @@ const userSchema = new mongoose.Schema({
   sessionTimestamp: { type: Number, default: null }
 });
 
-// Used Code Schema to track used access codes
-const usedCodeSchema = new mongoose.Schema({
-  code: { type: String, required: true, unique: true },
-  usedBy: { type: String, required: true },
-  usedAt: { type: Number, required: true }
-});
-
 const User = mongoose.model('User', userSchema);
-const UsedCode = mongoose.model('UsedCode', usedCodeSchema);
 
-// Access codes
-const validAccessCodes = [
-  "114633", "680774", "869640", "362064", "401640", "219946", "882802", "718587", "817698", "594647",
-  "968266", "967496", "219061", "181663", "116244", "595001", "117022", "672454", "585365", "679151",
-  "375430", "424234", "725572", "849951", "121510", "941687", "125678", "931125", "109698", "141202",
-  "691356", "266164", "924966", "326588", "786743", "202178", "657853", "590156", "514613", "604350",
-  "403224", "323157", "343569", "279298", "917840", "936661", "479360", "944608", "276241", "404548",
-  "608845", "194601", "280554", "304649", "720522", "280217", "357961", "543375", "854321", "707103",
-  "634620", "351469", "309677", "845172", "842567", "797613", "177328", "984363", "568804", "748299",
-  "726450", "822693", "363986", "704524", "817053", "463842", "401275", "198412", "570396", "847461",
-  "828261", "275108", "968469", "886222", "173306", "417740", "810983", "851568", "257756", "353587",
-  "808224", "479792", "206596", "488037", "374286", "474955", "371578", "190933", "921648", "633404",
-  "947398", "687943", "571949", "512192", "643916", "154103", "753326", "368034", "338964", "293620",
-  "305919", "978348", "697481", "881875", "949829", "548476", "391445", "281767", "963369", "450640",
-  "408891", "572241", "745185", "127715", "686515", "494258", "171996", "918606", "298152", "457111",
-  "992450", "832340", "695507", "502055", "353093", "209340", "316580", "390718", "724595", "768687",
-  "478478", "549618", "320997", "653633", "692688", "734812", "805131", "309595", "625607", "378805",
-  "982935", "977908", "425963", "552447", "878037", "172304", "246835", "820355", "485084", "548943",
-  "795909", "917500", "978876", "380287", "830778", "972517", "881275", "929975", "222210", "795896",
-  "476639", "224367", "443699", "179176", "728730", "924301", "186302", "870010", "354621", "352986",
-  "110246", "343462", "690486", "978169", "409226", "879949", "243332", "948752", "948520", "298725",
-  "131587", "276417", "341384", "550452", "717429", "813355", "410459", "630593", "512076", "251900",
-  "950239", "221368", "692270", "176038", "937859", "871873", "752135", "897159", "979482", "381844",
-  "821769", "732775", "312990", "571383", "554175", "124389", "967128", "122452", "705060", "966346",
-  "593718", "333969", "529314", "530313", "371260", "105315", "895467", "800195", "740155", "691453",
-  "806442", "764514", "479239", "515993", "207733", "176481", "654627", "970035", "913852", "900704",
-  "657373", "835770", "752340", "150150", "763831", "339389", "886998", "576699", "816223", "549035",
-  "923712", "950155", "826132", "127642", "985887", "632140", "807322", "776878", "178209", "257336",
-  "202272", "668802", "742413", "811897", "422717", "526399", "340667", "879618", "804286", "204238",
-  "218739", "122732", "180447", "773733", "701244", "483442", "666367", "553849", "740613", "530168",
-  "849864", "788124", "781117", "152627", "910532", "199251", "273588", "961303", "559391", "984769",
-  "422127", "542609", "598587", "456604", "895864", "640785", "981894", "410447", "802500", "629452",
-  "471727", "942178", "684376", "948345", "170328", "469645", "665349", "580680", "196642", "919915",
-  "325494", "956481", "471719", "805418", "808306", "328990", "855472", "614235", "271348", "990828",
-  "611696", "607745", "835383", "246448", "275749", "127886", "831156", "284965", "703715", "932798",
-  "198752", "545754", "674308", "685811", "942268", "735380", "539261", "511188", "480076", "363860",
-  "285183", "530505", "375720", "125622", "345266", "658797", "441922", "145236", "517701", "433984",
-  "188267", "368804", "573377", "621424", "135228", "745401", "691219", "905135", "692445", "626562",
-  "173320", "596842", "666387", "710250", "348725", "390297", "948682", "344074", "258965", "168417",
-  "536801", "448029", "290983", "188919", "846568", "100650", "649097", "870648", "497511", "116014",
-  "835504", "804610", "817587", "867701", "623957", "925949", "565505", "531304", "984253", "924287",
-  "606142", "542906", "778106", "644315", "763020", "863303", "633574", "631564", "750814", "735198",
-  "761335", "983206", "104493", "896655", "286941", "693888", "718199", "422183", "378916", "723369",
-  "130501", "866056", "841592", "390692", "499852", "792518", "125926", "592097", "453335", "118490",
-  "110850", "841132", "541398", "101035", "438397", "951581", "431086", "529320", "779542", "663350",
-  "690167", "666106", "539630", "197509", "698525", "771538", "508105", "981717", "769593", "788691",
-  "578702", "762223", "184468", "548447", "492962", "759198", "803010", "181259", "306365", "831676",
-  "898507", "985495", "493862", "529573", "562955", "118875", "620744", "335483", "533104", "295651",
-  "823210", "913671", "761105", "433187", "270967", "221651", "397518", "510861", "943498", "147079",
-  "945404", "512916", "434256", "497252", "906739", "940663", "512475", "314120", "221402", "346135",
-  "810612", "494591", "663248", "744185", "210094", "841560", "910818", "954901", "781957", "714936",
-  "523057", "663953", "466178", "481266", "300992", "899335", "568309", "970982", "502947", "715383",
-  "232190", "517146", "995868", "600164", "505381", "633963", "784132", "361896", "892461", "563952",
-  "488160", "155120", "513246", "384579", "160519", "850944", "767811", "290621", "989519", "718437",
-  "950537", "534146", "483874", "335045", "613502", "607246", "468877", "753137", "140021", "576462",
-  "800234", "110723", "579023", "159677", "307031", "143202", "612496", "501445", "805101", "153706",
-  "430885", "907620", "291204", "822530", "939282", "716752", "454655", "198825", "337814", "820349",
-  "550178", "151567", "841835", "515804", "682234", "831535", "467407", "298772", "541012", "965139",
-  "927891", "277510", "669892", "908712", "241734", "915153", "682742", "999390", "300084", "809924",
-  "888968", "431875", "942188", "594012", "394469", "835009", "815475", "952469", "316115", "874766",
-  "615328", "407978", "336028", "373928", "358451", "445847", "273580", "155377", "745081", "492967",
-  "859147", "701787", "400824", "462201", "300253", "278830", "703626", "976532", "425643", "774849",
-  "447754", "843336", "295387", "875881", "415449", "490152", "641445", "933537", "760741", "961484",
-  "561626", "173925", "989920", "454263", "327736", "495227", "952143", "359753", "899379", "962051",
-  "550233", "158893", "702997", "149217", "261117", "191808", "785871", "703931", "405892", "361801",
-  "233152", "768030", "722398", "889541", "737659", "252676", "113381", "839567", "116124", "264091",
-  "673376", "290106", "829667", "719133", "364124", "462679", "214174", "876818", "289552", "638011",
-  "744321", "512680", "813549", "955817", "557861", "182632", "688865", "277960", "492628", "756708",
-  "414806", "864651", "249296", "727163", "249153", "137395", "441261", "559244", "464689", "882348",
-  "237853", "616329", "875549", "491964", "537193", "650903", "875951", "889297", "249676", "725425"
-];
+// Access codes from scripts.txt
+const usernameCodes = {
+  A: { threeMonths: { initial: "222978", renewal: "000000" }, sevenMonths: { initial: "111000", renewal: "300000" } },
+  B: { threeMonths: { initial: "222496", renewal: "111111" }, sevenMonths: { initial: "111001", renewal: "310000" } },
+  C: { threeMonths: { initial: "222110", renewal: "222222" }, sevenMonths: { initial: "111002", renewal: "320000" } },
+  D: { threeMonths: { initial: "222111", renewal: "333333" }, sevenMonths: { initial: "111003", renewal: "330000" } },
+  E: { threeMonths: { initial: "222112", renewal: "444444" }, sevenMonths: { initial: "111004", renewal: "340000" } },
+  F: { threeMonths: { initial: "222113", renewal: "555555" }, sevenMonths: { initial: "111005", renewal: "350000" } },
+  G: { threeMonths: { initial: "222114", renewal: "666666" }, sevenMonths: { initial: "111006", renewal: "360000" } },
+  H: { threeMonths: { initial: "222115", renewal: "777777" }, sevenMonths: { initial: "111007", renewal: "370000" } },
+  I: { threeMonths: { initial: "222116", renewal: "888888" }, sevenMonths: { initial: "111008", renewal: "380000" } },
+  J: { threeMonths: { initial: "222117", renewal: "999999" }, sevenMonths: { initial: "111009", renewal: "390000" } },
+  K: { threeMonths: { initial: "222118", renewal: "100000" }, sevenMonths: { initial: "111010", renewal: "400000" } },
+  L: { threeMonths: { initial: "222119", renewal: "110000" }, sevenMonths: { initial: "111011", renewal: "410000" } },
+  M: { threeMonths: { initial: "222120", renewal: "120000" }, sevenMonths: { initial: "111012", renewal: "420000" } },
+  N: { threeMonths: { initial: "222121", renewal: "130000" }, sevenMonths: { initial: "111013", renewal: "430000" } },
+  O: { threeMonths: { initial: "222122", renewal: "140000" }, sevenMonths: { initial: "111014", renewal: "440000" } },
+  P: { threeMonths: { initial: "222123", renewal: "150000" }, sevenMonths: { initial: "111015", renewal: "450000" } },
+  Q: { threeMonths: { initial: "222124", renewal: "160000" }, sevenMonths: { initial: "111016", renewal: "460000" } },
+  R: { threeMonths: { initial: "222125", renewal: "170000" }, sevenMonths: { initial: "111017", renewal: "470000" } },
+  S: { threeMonths: { initial: "222126", renewal: "180000" }, sevenMonths: { initial: "111018", renewal: "480000" } },
+  T: { threeMonths: { initial: "222127", renewal: "190000" }, sevenMonths: { initial: "111019", renewal: "490000" } },
+  U: { threeMonths: { initial: "222128", renewal: "200000" }, sevenMonths: { initial: "111020", renewal: "500000" } },
+  V: { threeMonths: { initial: "222129", renewal: "210000" }, sevenMonths: { initial: "111021", renewal: "510000" } },
+  W: { threeMonths: { initial: "222130", renewal: "220000" }, sevenMonths: { initial: "111022", renewal: "520000" } },
+  X: { threeMonths: { initial: "222131", renewal: "230000" }, sevenMonths: { initial: "111023", renewal: "530000" } },
+  Y: { threeMonths: { initial: "222132", renewal: "240000" }, sevenMonths: { initial: "111024", renewal: "540000" } },
+  Z: { threeMonths: { initial: "222133", renewal: "250000" }, sevenMonths: { initial: "111025", renewal: "550000" } },
+};
 
 // Routes
 app.get('/', (req, res) => {
@@ -162,23 +113,16 @@ app.post('/verify-access', async (req, res) => {
     if (!user) {
       return res.status(404).json({ message: 'User not found.' });
     }
-    // Check if the code has already been used
-    const usedCode = await UsedCode.findOne({ code });
-    if (usedCode) {
-      return res.status(403).json({ message: 'This access code has already been used.' });
+    const firstLetter = username.charAt(0).toUpperCase();
+    if (!usernameCodes[firstLetter]) {
+      return res.status(400).json({ message: 'Invalid username: First letter must be A-Z.' });
     }
-    // Check if the code is valid
-    if (!validAccessCodes.includes(code)) {
-      return res.status(403).json({ message: 'Invalid access code.' });
+    const planKey = subscriptionMonths === 3 ? 'threeMonths' : 'sevenMonths';
+    const isExpired = !user.subscription.end || user.subscription.end <= Date.now();
+    const expectedCode = isExpired ? usernameCodes[firstLetter][planKey].initial : usernameCodes[firstLetter][planKey].renewal;
+    if (code !== expectedCode) {
+      return res.status(403).json({ message: `Invalid access code for ${subscriptionMonths}-month plan.` });
     }
-    // Record the used code
-    const usedCodeEntry = new UsedCode({
-      code,
-      usedBy: username,
-      usedAt: Date.now()
-    });
-    await usedCodeEntry.save();
-    // Update subscription
     const monthsInMs = subscriptionMonths * 30 * 24 * 60 * 60 * 1000;
     user.subscription.end = Date.now() + monthsInMs;
     user.subscription.months = subscriptionMonths;
@@ -200,7 +144,7 @@ app.get('/questions', async (req, res) => {
     const isSubscribed = user.subscription.end > Date.now();
     const questionCount = parseInt(count);
     const maxQuestions = isSubscribed ? [25, 50, 100].includes(questionCount) ? questionCount : 15 : 15;
-    // Sample questions for Use of English (replace with full quizData)
+    // Sample questions for Use of English (replace with full quizData from scripts.txt)
     const quizData = {
       "Use of English": [
     {
