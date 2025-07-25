@@ -260,57 +260,26 @@ async function loginUser() {
   }
 }
 
-// Handle Paystack payment
-async function initiatePaystackPayment() {
-  console.log("Initiating Paystack payment");
+// Handle subscription code submission
+async function submitAccessCode() {
+  console.log("Submitting access code");
   try {
+    const code = document.getElementById("access-code").value.trim();
     const subscriptionMonths = parseInt(document.querySelector('input[name="subscription-plan"]:checked')?.value);
-    if (!subscriptionMonths) {
-      showMessage("subscription-error", "Please select a subscription plan.");
-      return;
-    }
-    const amount = subscriptionMonths === 3 ? 100000 : 200000; // Amount in kobo
-    const response = await fetch('/initiate-payment', {
+    const response = await fetch('/verify-access', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Authorization': sessionToken },
-      body: JSON.stringify({ username: currentUser.username, subscriptionMonths })
+      body: JSON.stringify({ username: currentUser.username, code, subscriptionMonths })
     });
     const data = await response.json();
-    if (!response.ok) {
-      showMessage("subscription-error", data.message);
-      return;
+    showMessage("subscription-error", data.message, response.ok);
+    if (response.ok) {
+      isSubscribed = data.isSubscribed;
+      showStartScreen();
     }
-    const handler = PaystackPop.setup({
-      key: 'pk_test_b6a71b2420bb92b73b0b54b96ca7b90288f10231', // Paystack public key
-      email: `${currentUser.username}@shefzlaw1234.com`, // Dummy email
-      amount,
-      ref: data.reference,
-      callback: async (response) => {
-        try {
-          const verifyResponse = await fetch('/verify-payment', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json', 'Authorization': sessionToken },
-            body: JSON.stringify({ reference: response.reference, username: currentUser.username })
-          });
-          const verifyData = await verifyResponse.json();
-          showMessage("subscription-error", verifyData.message, verifyResponse.ok);
-          if (verifyResponse.ok) {
-            isSubscribed = verifyData.isSubscribed;
-            showStartScreen();
-          }
-        } catch (error) {
-          console.error("Payment verification error:", error);
-          showMessage("subscription-error", "Failed to verify payment.");
-        }
-      },
-      onClose: () => {
-        showMessage("subscription-error", "Payment window closed.");
-      }
-    });
-    handler.openIframe();
   } catch (error) {
-    console.error("Payment initiation error:", error);
-    showMessage("subscription-error", "Failed to initiate payment.");
+    console.error("Subscription error:", error);
+    showMessage("subscription-error", "Failed to process code. Please try again.");
   }
 }
 
@@ -343,7 +312,7 @@ async function logoutUser() {
 
 // Shuffle array (Fisher-Yates)
 function shuffleArray(array) {
-  for (let i = array.length - 1; i > 0; i--) | {
+  for (let i = array.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
     [array[i], array[j]] = [array[j], array[i]];
   }
@@ -550,7 +519,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "register-btn": registerUser,
       "show-register": showRegisterScreen,
       "show-login": showLoginScreen,
-      "paystack-pay-btn": initiatePaystackPayment,
+      "submit-code-btn": submitAccessCode,
       "free-user-btn": proceedAsFreeUser,
       "logout-btn": logoutUser,
       "start-btn": startQuiz,
