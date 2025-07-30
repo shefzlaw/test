@@ -152,6 +152,311 @@ app.get('/questions', async (req, res) => {
       options: ["Oppressive", "Prodigal", "Crumbling", "Purposeless"],
       correct: "Crumbling",
     },
+      {
+    question: "‘Mother tongue’ is the name of the language which a growing child acquired………………………………….",
+    options: ["Formally", "Informally", "Semi formally", "Uniformly"],
+    correct: "Informally"
+  },
+  {
+    question: "What type of noun is the word ‘knowledge’?",
+    options: ["Common", "Collective", "Proper", "Abstract"],
+    correct: "Abstract"
+  },
+  {
+    question: "In which tense is the sentence ‘I have eaten’?",
+    options: ["Simple future", "Present perfect", "Present continuous", "Simple past"],
+    correct: "Present perfect"
+  },
+  {
+    question: "Yawning in order to show someone is hungry or tired is an example of…………………………………………",
+    options: ["Vocal paralanguage communication", "Non vocal paralanguage communication", "Verbal communication", "Semi verbal communication"],
+    correct: "Non vocal paralanguage communication"
+  },
+  {
+    question: "A letter which a person writes to the chairman of his village association is called………………………………..",
+    options: ["Formal", "Informal", "Non formal", "Semi-formal"],
+    correct: "Semi-formal"
+  },
+  {
+    question: "In which degree of comparison is the adjective ‘simpler’?",
+    options: ["Positive", "Superlative", "Artificial", "Comparative"],
+    correct: "Comparative"
+  },
+  {
+    question: "A………………………… is somebody who can speak two different languages fluently",
+    options: ["Monolingual", "Monocultural", "Bilingual", "Multilingual"],
+    correct: "Bilingual"
+  },
+  {
+    question: "The ‘decoder’ in a communication process is the………………………………",
+    options: ["Sender", "Message", "Receiver", "Medium and channel"],
+    correct: "Receiver"
+  },
+  {
+    question: "The first paragraph of an essay is the ………………………………….",
+    options: ["Conclusion", "Convulsion", "Main body", "Introduction"],
+    correct: "Introduction"
+  },
+  {
+    question: "In writing, every word of a proper noun must begin with…………………………….",
+    options: ["Small letter", "Capital letter", "Full stop", "Name"],
+    correct: "Capital letter"
+  },
+  {
+    question: "Word like pastly, stationery, family and grocery are called……………………… in English grammar",
+    options: ["Collective noun", "Common noun", "Abstract noun", "Proper noun"],
+    correct: "Common noun"
+  },
+  {
+    question: "All of the following are purposes of communication except……………………………….",
+    options: ["Linking people in social relationship", "Giving command to other people", "Invoking evil spirits through incantation", "Helping the poor with food to eat"],
+    correct: "Invoking evil spirits through incantation"
+  },
+  {
+    question: "A person who is deaf has a …………………………… barrier in communication",
+    options: ["Physical", "Psychological", "Syntactic", "Physiological"],
+    correct: "Physical"
+  },
+  {
+    question: "The sentence of a paragraph which contains the central idea contained in it is called……………………..",
+    options: ["Topic sentence", "Simple sentence", "Principal sentence", "Complex sentence"],
+    correct: "Topic sentence"
+  },
+  {
+    question: "There are a total of……………………………………. Vowel sounds in English language",
+    options: ["23", "38", "18", "30"],
+    correct: "18"
+  },
+  {
+    question: "Of all the language skills,……………………… is the most important",
+    options: ["Listening", "Speaking", "Reading", "Writing"],
+    correct: "Listening"
+  },
+  {
+    question: "When a person uses a words of different language in a particular sentence in his speech, he is…………",
+    options: ["Code switching", "Code shifting", "Code mixing", "Communicating"],
+    correct: "Code mixing"
+  },
+  {
+    question: "The punctuation mark used in separating a list of items in a sentence is……………………………..",
+    options: ["Coma", "Full stop", "Dash", "Comma"],
+    correct: "Comma"
+  },
+  {
+    question: "A sentence is a group of word which has a…………………………",
+    options: ["Subject and predicate", "Object and prediction", "Subject and conclusion", "Object and presumption"],
+    correct: "Subject and predicate"
+  },
+  {
+    question: "When the writer of a passage uses word which cannot be translated directly to understand his meaning, we say he is using……………………………..",
+    options: ["Figure of speech", "Parts of speech", "Literal meaning", "Comprehension"],
+    correct: "Figure of speech"
+  },
+  {
+    question: "Words like because, if and so that which begin the dependent clause of a complex sentence are called…………………..",
+    options: ["Subordinate clause", "Subordinating conjunction", "Coordinating conjunction", "Main clause"],
+    correct: "Subordinating conjunction"
+  },
+  {
+    question: "All the following are characteristics of language except………………………..",
+    options: ["It is human", "It is non-instinctive", "It is vocal and systematic", "It is natural"],
+    correct: "It is natural"
+  },
+  {
+    question: "In which voice is the sentence: ‘the fake drugs were seized by NDLEA personnel’.",
+    options: ["Passive", "Active", "Positive", "Negative"],
+    correct: "Passive"
+  },
+  {
+    question: "We have a total of …………………. Consonant sounds in English",
+    options: ["37", "24", "20", "33"],
+    correct: "24"
+  },
+  {
+    question: "Language is acquired informally when the learner is in direct contact with the native speakers",
+    options: ["None of the above", "False", "True", "All of the above"],
+    correct: "True"
+  },
+  {
+    question: "When writing a formal letter, you……………..",
+    options: ["Can greet", "Use informal language to communicate", "Can entertain", "Go straight to the point of discussion"],
+    correct: "Go straight to the point of discussion"
+  },
+  {
+    question: "Noise is a ……………………….. barrier to effective communication",
+    options: ["Phonological", "Physical", "Psychological", "Syntactic"],
+    correct: "Physical"
+  },
+  {
+    question: "That English is Nigerians lingual franca means…………….",
+    options: ["It is the French language introduced", "It is the language to frankly speak with", "It is the dominant language", "It is the official language of communication"],
+    correct: "It is the official language of communication"
+  },
+  {
+    question: "The students will start their practical on Wednesday next week. This sentence is in…………………",
+    options: ["Direct speech", "Reported speech", "Loud speech", "Distant speech"],
+    correct: "Reported speech"
+  },
+  {
+    question: "People who have the speech sounds of a language but find it difficult communicate in the language have a problem called……………………..",
+    options: ["Code mixing", "Code switching", "Dissonance in communication", "Verbal communication"],
+    correct: "Dissonance in communication"
+  },
+  {
+    question: "A compound sentence contains………………………..",
+    options: ["2 main clauses", "1 main clause", "2 subordinate clauses", "1 main clause and 1 subordinate clause"],
+    correct: "2 main clauses"
+  },
+  {
+    question: "He told me to wait for him for another 30 minutes. This sentence is in…………………",
+    options: ["Verbal communication", "Direct speech", "Paralanguage communication", "Reported speech"],
+    correct: "Reported speech"
+  },
+  {
+    question: "In the conclusion part of an essay, the writer can………………….",
+    options: ["Explain the topic in detail", "Define the topic of discussion", "Make suggestion", "Start by greeting the receiver"],
+    correct: "Make suggestion"
+  },
+  {
+    question: "The predicate of a simple sentence usually begins with………………………",
+    options: ["The verb element in the sentence", "Noun phrase", "Subordinate clause", "Conjunction"],
+    correct: "The verb element in the sentence"
+  },
+  {
+    question: "The mile stone on the side of a road which shows the distance of places is an example of…………………",
+    options: ["Paralanguage communication", "Oral verbal communication", "Body language", "Written verbal communication"],
+    correct: "Written verbal communication"
+  },
+  {
+    question: "An exclamation mark is used at the end of……………………………",
+    options: ["Emotional statement", "Question", "Command", "Complex sentence"],
+    correct: "Emotional statement"
+  },
+  {
+    question: "The letter which someone writes to his father in English is an example of…………………………….",
+    options: ["Formal letter", "Semi-formal letter", "Informal letter", "None of the above"],
+    correct: "Informal letter"
+  },
+  {
+    question: "When the sender of a message uses a word in the same language which the receiver doesn’t understand, we say there is a……………………………………",
+    options: ["Mistake in the communication", "An error in the message", "Dialectical interference in the message", "A disturbance in the communication"],
+    correct: "Dialectical interference in the message"
+  },
+  {
+    question: "Speaking as a language skill means",
+    options: ["Opening the mouth to talk", "Using words to say something to another person", "Convincing people with factual information", "Using difficult vocabulary to talk"],
+    correct: "Using words to say something to another person"
+  },
+  {
+    question: "A traffic warden who control the movement of traffic in the city uses…………………………to communicate",
+    options: ["Body language", "Para language", "Oral communication", "Traffic light"],
+    correct: "Body language"
+  },
+  {
+    question: "When it is raining heavily, drivers have to put on their vehicle headlights for other road users to see them. This is because there is…………………………..in the environment at that time",
+    options: ["Rainfall", "Dew", "Harmattan dust", "Physical interference"],
+    correct: "Physical interference"
+  },
+  {
+    question: "Communication can best be defined as",
+    options: ["Telling somebody something", "The process of telling people something", "The process of giving information", "The process of sending message to another person"],
+    correct: "The process of sending message to another person"
+  },
+  {
+    question: "Language is the fastest and most effective means of communication",
+    options: ["True", "False"],
+    correct: "False"
+  },
+  {
+    question: "A person who is deaf and dumb cannot understand when another person speaks to him. This is because he has………………………………..in communication",
+    options: ["No listening ability", "Physiological interference", "Phonological problem", "No language"],
+    correct: "Physiological interference"
+  },
+  {
+    question: "For a person to be a good and effective reader, he has to",
+    options: ["Go to school", "Have many text books", "Read during the day time", "Have good knowledge of the words he is reading"],
+    correct: "Have good knowledge of the words he is reading"
+  },
+  {
+    question: "The language which a growing child acquires from the society is also called",
+    options: ["Strong language", "Original language", "Root language", "Mother tongue"],
+    correct: "Mother tongue"
+  },
+  {
+    question: "When we hiss, we are using………………………..to communicate our displeasure over something",
+    options: ["Speech sound", "Paralanguage", "Verbal sound", "Human sound"],
+    correct: "Paralanguage"
+  },
+  {
+    question: "A parrot can only mimic human speech sounds but cannot speak language because language is strictly…………………………………",
+    options: ["Spoken in the mouth", "For communication purpose", "Human", "Difficult to animals"],
+    correct: "Human"
+  },
+  {
+    question: "Most Nigerians are poor speakers of English because they learnt the language………………………and not directly from the native speakers of the language",
+    options: ["Semi formally", "Formally", "Informally", "Non-formally"],
+    correct: "Formally"
+  },
+  {
+    question: "A person who has a pronunciation problem find it difficult to say some word correctly because he has……………………………… in communication",
+    options: ["Pronunciation problem", "Talking abnormalities", "Physical interference", "Physiological interference"],
+    correct: "Pronunciation problem"
+  },
+  {
+    question: "It is not compulsory that a child that is growing up must speak a particular language because language is not………………………………….of human being",
+    options: ["An instinct", "Practical", "A necessity", "By force"],
+    correct: "An instinct"
+  },
+  {
+    question: "Language is an identity which we use to know somebody or a group of people. In short, language is……………….",
+    options: ["Systematic", "Symbolic", "Identification", "A medium of communication"],
+    correct: "Identification"
+  },
+  {
+    question: "A video call on an android phone in which you see and talk to somebody is an example of………………….",
+    options: ["Non-verbal communication", "Verbal communication", "Speech", "Paralanguage"],
+    correct: "Verbal communication"
+  },
+  {
+    question: "A bilingual is a person who speaks…………………….. different languages fluently",
+    options: ["One", "Two", "Three", "None"],
+    correct: "Two"
+  },
+  {
+    question: "Somebody who is extremely angry may not be able to say what he likes to another person because at that moment, he has………………………………..in his communication",
+    options: ["Psychological interference", "Physical interference", "Anger", "Phonological"],
+    correct: "Psychological interference"
+  },
+  {
+    question: "When translating one language into another, the meaning of what we say is what we should consider and not the meaning of the words used because all languages are",
+    options: ["The same", "Equal", "Made of vocal sound", "Systematic"],
+    correct: "Systematic"
+  },
+  {
+    question: "The best language spoken fluently is the one which is acquired through contact with the native speakers of the language",
+    options: ["True", "False"],
+    correct: "True"
+  },
+  {
+    question: "Noise is an example of ……………………….interference in communication which doesn’t allow us to hear sound which we desire",
+    options: ["Psychological", "Physiological", "Practical", "Physical"],
+    correct: "Physical"
+  },
+  {
+    question: "The people who speak a language are located…………………………… although the language can expand to other places as a result of migration",
+    options: ["Close to us", "Somewhere in the world", "Far away from us", "Away from here"],
+    correct: "Somewhere in the world"
+  },
+  {
+    question: "The purpose of communication among human being is for us………………………………..",
+    options: ["Great one another", "See our selves", "Understand one another", "Investigate ourselves"],
+    correct: "Understand one another"
+  },
+  {
+    question: "Semantic interference in communication takes place when the sender…………………………….by the receiver",
+    options: ["Uses words whose meaning cannot be understood", "Tells a story which is not understood", "Point to a sign which is not understood", "Produces a sound using a part of his body which is not understood"],
+    correct: "Uses words whose meaning cannot be understood"
+  },
     {
       question:
         "The conference Centre caters for transients only. Choose the option nearest in meaning to 'transients':",
