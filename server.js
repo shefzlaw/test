@@ -11178,7 +11178,7 @@ app.get('/questions', async (req, res) => {
   { question: "Skeletal muscles are involuntary muscles.", options: ["True", "False"], correct: "False" },
   { question: "The brain and spinal cord make up the central nervous system.", options: ["True", "False"], correct: "True" },
   { question: "Red blood cells help in the clotting of blood.", options: ["True", "False"], correct: "False" },
-      { question: "...................... is a sesamoid bone.", options: ["Patella", "Scapular", "Clavicle", "Vertebrae"], correct: "Patella" },
+  { question: "...................... is a sesamoid bone.", options: ["Patella", "Scapular", "Clavicle", "Vertebrae"], correct: "Patella" },
   { question: "The most abundant of the blood cells are the ..................", options: ["Red blood cells", "White blood cells", "Platelets", "All of the options"], correct: "Red blood cells" },
   { question: "Blood is made up of ................. and .................", options: ["Body fluid and blood cells", "Blood cells and plasma", "Plasma and red blood cells", "None of the options"], correct: "Blood cells and plasma" },
   { question: "Red blood cells transport oxygen while platelets are responsible for ..................", options: ["Fighting infections", "Transport of carbon dioxide", "Clotting", "Red color"], correct: "Clotting" },
@@ -11206,7 +11206,292 @@ app.get('/questions', async (req, res) => {
   { question: ".................. clean break in a bone.", options: ["Complex fracture", "Green-stick fracture", "Simple fracture", "Complicated fracture"], correct: "Simple fracture" },
   { question: "Fluid found within the cells is called ........ fluid.", options: ["Cellular", "Cutaneous", "Intracellular", "Extracellular"], correct: "Intracellular" },
   { question: "The following are body cavities EXCEPT", options: ["Intercellular", "Abdominal", "Pelvic", "Cranial"], correct: "Intercellular" },
-{
+  {
+    question: "Responsible for irritability are the ______ tissues.",
+    options: ["Muscular", "Nervous", "Epithelial", "Connective"],
+    correct: "Nervous"
+  },
+  {
+    question: "The following are bones of the axial skeleton EXCEPT",
+    options: ["Hyoid", "Ribs", "Coccyx", "Clavicle"],
+    correct: "Clavicle"
+  },
+  {
+    question: "The longest and hardest bone is?",
+    options: ["Tibia", "Scapular", "Femur", "Humerus"],
+    correct: "Femur"
+  },
+  {
+    question: "______ is an irregular bone.",
+    options: ["Digits", "Fibula", "Ulnar", "Sphenoid"],
+    correct: "Sphenoid"
+  },
+  {
+    question: "There are ______ types of bone.",
+    options: ["2", "3", "4", "5"],
+    correct: "4"
+  },
+  {
+    question: "Which of the following is a type of joint?",
+    options: ["Ball and socket", "Cartilaginous", "Fibrous", "Synovial"],
+    correct: "Ball and socket"
+  },
+  {
+    question: "A point of communication between neurons is?",
+    options: ["Sensory", "Synapse", "Tract", "Ganglion"],
+    correct: "Synapse"
+  },
+  {
+    question: "Which of the following is not found in the middle ear?",
+    options: ["Incus", "Eustachian tube", "Semi-circular canal", "Stapes"],
+    correct: "Semi-circular canal"
+  },
+  {
+    question: "The vestibulocochlear nerve receives stimulus from",
+    options: ["Oval window", "Pinna", "Eardrum", "Cochlear"],
+    correct: "Cochlear"
+  },
+  {
+    question: "What part of the ear serves as an antenna determining the direction and location of sound?",
+    options: ["Eardrum", "Pinna", "External auditory meatus", "Perilymph"],
+    correct: "Pinna"
+  },
+  {
+    question: "The ear is divided into ______ parts.",
+    options: ["2", "3", "4", "5"],
+    correct: "3"
+  },
+  {
+    question: "The light sensitive part of the eye is?",
+    options: ["Choroid", "Retina", "Sclera", "Lens"],
+    correct: "Retina"
+  },
+  {
+    question: "Which of these is incorrect about shortsightedness?",
+    options: ["Eyeball is too short", "Image is formed behind the retina", "The person sees only short distant objects", "Image falls in front of retina"],
+    correct: "Eyeball is too short"
+  },
+  {
+    question: "______ is an accessory organ of digestive system.",
+    options: ["Salivary gland", "Esophagus", "Duodenum", "Caecum"],
+    correct: "Salivary gland"
+  },
+  {
+    question: "The small intestine has ______ parts.",
+    options: ["1", "2", "3", "4"],
+    correct: "3"
+  },
+  {
+    question: "Absorption of water mostly takes place in?",
+    options: ["Jejunum", "Colon", "Duodenum", "Stomach"],
+    correct: "Colon"
+  },
+  {
+    question: "Which of these enzymes is found in saliva?",
+    options: ["Ptylin", "Lipase", "Trypsin", "Maltase"],
+    correct: "Ptylin"
+  },
+  {
+    question: "End product of starch digestion is?",
+    options: ["Amino acids", "Maltose", "Glucose", "Glycerol"],
+    correct: "Maltose"
+  },
+  {
+    question: "Difficulty of bowel movement is called?",
+    options: ["Esophagitis", "Colitis", "Constipation", "GERDs"],
+    correct: "Constipation"
+  },
+  {
+    question: "______ is not a process of urine formation.",
+    options: ["Ultra-filtration", "Selective reabsorption", "Tubular Secretion", "Micturition"],
+    correct: "Micturation"
+  },
+  {
+    question: "There are ______ renal pyramids in each kidney.",
+    options: ["3 to 4", "1 to 2", "3 to 5", "4 to 7"],
+    correct: "3 to 5"
+  },
+  {
+    question: "The arteries that carry blood to the kidneys are ______ arteries.",
+    options: ["Renal", "Trenal", "Venal", "Cortical"],
+    correct: "Renal"
+  },
+  {
+    question: "Which of these is not a part of the kidney?",
+    options: ["Renal Tubules", "Renal Medulla", "Renal Cortex", "Renal Pelvis"],
+    correct: "Renal Pelvis"
+  },
+  {
+    question: "Which of the statements below is incorrect? Catheterization in males is difficult and painful",
+    options: ["Men have prostate glands", "Women contract UTI more easily than men", "The length of male and female urethra are same"],
+    correct: "The length of male and female urethra are same"
+  },
+  {
+    question: "Primary function of melanin secreted by cells in the epidermis of the skin is ______.",
+    options: ["Absorption of heat", "Absorption of UV light", "Skin color hair color", "Absorption of topically administered drugs"],
+    correct: "Absorption of UV light"
+  },
+  {
+    question: "Functions of the skin includes the following EXCEPT",
+    options: ["Temperature regulation", "synthesis of vitamin D", "protection", "Deregulation"],
+    correct: "Deregulation"
+  },
+  {
+    question: "Which of these best defines Physiology?",
+    options: ["Structure of human body", "Study of the normal functioning of the human tissues, organs and systems", "Study of microorganisms in the human body", "Study of the structure of the body"],
+    correct: "Study of the normal functioning of the human tissues, organs and systems"
+  },
+  {
+    question: "Anatomy is best defined as:",
+    options: ["How the body functions", "Collection of tissues", "The study of abnormal functioning of different parts of the body", "The study of the structure of the body and the physical relationships between body systems"],
+    correct: "The study of the structure of the body and the physical relationships between body systems"
+  },
+  {
+    question: "Basic knowledge of Anatomy and Physiology is necessary in order to",
+    options: ["Identify normal structure", "Understand the structure and functions of the systems", "Identify abnormal structure", "Provide basis of client and community to understand"],
+    correct: "Understand the structure and functions of the systems"
+  },
+  {
+    question: "What is a cell?",
+    options: ["The smallest unit of life", "Found only in human brain", "Bigger that tissues and organs", "Does not change with age"],
+    correct: "The smallest unit of life"
+  },
+  {
+    question: "One of these is the power house of the cell:",
+    options: ["Nucleus", "Cellulose", "Chloroplast", "Mitochondria"],
+    correct: "Mitochondria"
+  },
+  {
+    question: "The human body is made up of ONE of the following groups in order to develop",
+    options: ["Cells, tissues, organs, systems", "Cells, organs, tissue and systems", "Cells systems, organs and cell organelles", "Cells, tissues, systems and organs"],
+    correct: "Cells, tissues, organs, systems"
+  },
+  {
+    question: "The biggest vein that receives blood from parts of the body below the heart is the______",
+    options: ["Superior vena cava", "Inferior vena cava", "Internal jugular vein", "Renal vein"],
+    correct: "Inferior vena cava"
+  },
+  {
+    question: "What is the function of follicle stimulating hormone?",
+    options: ["Stimulate secretion of estrogen", "Stimulate production/maturation of sex cells", "Stimulate development of breast", "Stimulate testosterone production"],
+    correct: "Stimulate production/maturation of sex cells"
+  },
+  {
+    question: "Which of these hormones is not produced by the thyroid gland?",
+    options: ["T3", "T4", "Calcitonin", "Thymocin"],
+    correct: "Thymocin"
+  },
+  {
+    question: "The effect of release of melatonin is______",
+    options: ["Dizziness", "Drowsiness", "Laziness", "Cleverness"],
+    correct: "Drowsiness"
+  },
+  {
+    question: "Which hormone is found in the neurohypophysis?",
+    options: ["FSH", "GH", "ACTH", "ADH"],
+    correct: "ADH"
+  },
+  {
+    question: "Over secretion of growth hormone during normal growth period result in?",
+    options: ["Dwarfism", "Acromegaly", "Gigantism", "None of the options"],
+    correct: "Gigantism"
+  },
+  {
+    question: "Which of these hormones is not secreted by adrenal cortex?",
+    options: ["Glucocorticoids", "Androgens", "Mineralocorticoids", "Adrenaline"],
+    correct: "Adrenaline"
+  },
+  {
+    question: "Which of the following is not an effect of oxytocin?",
+    options: ["Milk production", "Milk ejection", "Menstrual cramps", "Delivery"],
+    correct: "Menstrual cramps"
+  },
+  {
+    question: "Which of these endocrine glands is heterocrine?",
+    options: ["Pituitary", "Pancreas", "Thymus", "Suprarenal"],
+    correct: "Pancreas"
+  },
+  {
+    question: "Inadequate secretion of insulin may lead to______",
+    options: ["Diabetes mellitus", "Diabetes insipidus", "Slow response", "All of the options"],
+    correct: "Diabetes mellitus"
+  },
+  {
+    question: "Which of these is not a male reproductive organ?",
+    options: ["Penis", "Testes", "Epididymis", "Ureters"],
+    correct: "Ureters"
+  },
+  {
+    question: "Which of these is not a female internal reproductive organ?",
+    options: ["Ovary", "Cervix", "Clitoris", "Uterus"],
+    correct: "Clitoris"
+  },
+  {
+    question: "Sperm cells are produced in the?",
+    options: ["Vas deferens", "Prostate gland", "Seminal vesicle", "Testes"],
+    correct: "Testes"
+  },
+  {
+    question: "The urinary tract and the reproductive tract in males meet in the?",
+    options: ["Epididymis", "Seminal vesicle", "Prostate gland", "Urinary bladder"],
+    correct: "Prostate gland"
+  },
+  {
+    question: "Male hormone responsible for development of sex characters in males is...",
+    options: ["Testosterone", "Progesterone", "Estrogen", "FSH"],
+    correct: "Testosterone"
+  },
+  {
+    question: "Ovulation is on the ______ day of menstrual cycle.",
+    options: ["1st", "7th", "12th", "14th"],
+    correct: "14th"
+  },
+  {
+    question: "Day 1 to 13 is the ______ Phase",
+    options: ["Menstrual", "Ovulation", "Luteal", "Proliferative"],
+    correct: "Menstrual"
+  },
+  {
+    question: "Normal fertilization takes place in the...",
+    options: ["Ovaries", "Fallopian tube", "Cervix", "Uterus"],
+    correct: "Fallopian tube"
+  },
+  {
+    question: "The following are functions of nervous system except...",
+    options: ["Reception of stimulus", "Transmission of stimulus", "Initiation of appropriate response", "All of the options"],
+    correct: "All of the options"
+  },
+  {
+    question: "The following are neural cells EXCEPT",
+    options: ["Neutrophils", "Oligodendrocytes", "Astrocytes", "Microglia"],
+    correct: "Neutrophils"
+  },
+  {
+    question: "Division of neurons based on their functions include the following except...",
+    options: ["Sensory", "Autonomic", "Inter", "Motor"],
+    correct: "Autonomic"
+  },
+  {
+    question: "For 'fight or flight' mood is when ______ is activated.",
+    options: ["Sympathetic nervous system", "Parasympathetic nervous system", "Automatic nervous system", "Somatic nervous system"],
+    correct: "Sympathetic nervous system"
+  },
+  {
+    question: "Bundles of nerve fibers with the same origin, termination and function is called...",
+    options: ["Ganglion", "Tract", "Neuron", "Cranium"],
+    correct: "Tract"
+  },
+  {
+    question: "There are ______ cranial nerves.",
+    options: ["3", "5", "10", "12"],
+    correct: "12"
+  },
+  {
+    question: "Special nerve to the eye is ______ nerve",
+    options: ["Optic", "Vestibulocochlear", "Hypoglossal", "Vagus"],
+    correct: "Optic"
+  },
+  {
     question: "The following are found in the abdominal cavity EXCEPT",
     options: ["Liver", "Kidney", "Gall bladder", "Lungs"],
     correct: "Lungs"
