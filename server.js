@@ -152,6 +152,11 @@ app.get('/questions', async (req, res) => {
       options: ["Oppressive", "Prodigal", "Crumbling", "Purposeless"],
       correct: "Crumbling",
     },
+        {
+    question: "The landlord invited a ______ to fix the glass windows.",
+    options: ["a) technician", "b) plumber", "c) glazier", "d) designer"],
+    correct: "c) glazier"
+  },
       {
     question: "‘Mother tongue’ is the name of the language which a growing child acquired………………………………….",
     options: ["Formally", "Informally", "Semi formally", "Uniformly"],
