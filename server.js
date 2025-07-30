@@ -11178,6 +11178,109 @@ app.get('/questions', async (req, res) => {
   { question: "Skeletal muscles are involuntary muscles.", options: ["True", "False"], correct: "False" },
   { question: "The brain and spinal cord make up the central nervous system.", options: ["True", "False"], correct: "True" },
   { question: "Red blood cells help in the clotting of blood.", options: ["True", "False"], correct: "False" },
+      { question: "...................... is a sesamoid bone.", options: ["Patella", "Scapular", "Clavicle", "Vertebrae"], correct: "Patella" },
+  { question: "The most abundant of the blood cells are the ..................", options: ["Red blood cells", "White blood cells", "Platelets", "All of the options"], correct: "Red blood cells" },
+  { question: "Blood is made up of ................. and .................", options: ["Body fluid and blood cells", "Blood cells and plasma", "Plasma and red blood cells", "None of the options"], correct: "Blood cells and plasma" },
+  { question: "Red blood cells transport oxygen while platelets are responsible for ..................", options: ["Fighting infections", "Transport of carbon dioxide", "Clotting", "Red color"], correct: "Clotting" },
+  { question: "Haemoglobin is responsible for?", options: ["Color of the skin", "Color of the blood", "Color of the lymph", "Immunity"], correct: "Color of the blood" },
+  { question: "................... is not a type of WBC.", options: ["Basophils", "Eosinophils", "Neutrophils", "Isophils"], correct: "Isophils" },
+  { question: "The following are functions of the blood EXCEPT", options: ["Regulation of body temperature", "Regulation of pH", "Transport of enzymes", "Transport of waste product"], correct: "Transport of enzymes" },
+  { question: "The membrane that covers the heart is?", options: ["Endocardium", "Mesocardium", "Endothelium", "Pericardium"], correct: "Pericardium" },
+  { question: "The myocardium is mostly .................... layer.", options: ["Muscular", "Fluid", "Tissue", "External"], correct: "Muscular" },
+  { question: "The strongest of the heart chambers is the left ventricle and it?", options: ["Pumps blood to the lungs", "Receives blood from superior and inferior vena cavae", "Pumps blood to the systemic circulation", "Pumps blood to the pulmonary circulation"], correct: "Pumps blood to the systemic circulation" },
+  { question: "All arteries carry oxygenated blood except ............... artery.", options: ["Coronary", "Subclavian", "Aorta", "Pulmonary"], correct: "Pulmonary" },
+  { question: "..................... is not a component of lymphatic system.", options: ["Lymph nodes", "Lymphoid tissues", "Lymphatic vessels", "Lymphatic membrane"], correct: "Lymphatic membrane" },
+  { question: "The following are functions of the lymphatic system EXCEPT", options: ["Transport excess fluid", "Transport oxygen", "Transport lipids from the intestine", "Fight infectious agents"], correct: "Transport oxygen" },
+  { question: "................... is not a part of pharynx.", options: ["Nasopharynx", "Otopharynx", "Oropharynx", "Laryngopharynx"], correct: "Otopharynx" },
+  { question: "Which of the following is not a component of respiratory system?", options: ["Airway", "Larynx", "Lungs", "Respiratory muscle"], correct: "Respiratory muscle" },
+  { question: "With the following you can confirm this is the right lung except ..............", options: ["Presence of three lobes", "Absence of cardiac notch", "All of the options", "Shorter and wider"], correct: "All of the options" },
+  { question: "For inspiration the following take place EXCEPT", options: ["Contraction of internal intercostal muscle", "Contraction of external intercostal muscle", "Contraction of diaphragm", "Relaxation of external intercostal muscle"], correct: "Contraction of internal intercostal muscle" },
+  { question: "The following is not true about alveoli.", options: ["They are found in the lungs", "They contain blood", "There are about 30 million alveoli in each lung", "They filter oxygen and exchange it with carbon dioxide"], correct: "They contain blood" },
+  { question: "Which of the following statements is incorrect?", options: ["Internal respiration occurs in the lungs", "Internal respiration occurs in the tissues", "External respiration occurs in the lungs", "Intercostal muscles and diaphragm are necessary for breathing"], correct: "Internal respiration occurs in the lungs" },
+  { question: "The following statements are correct EXCEPT", options: ["Oxygen is transported mainly by hemoglobin", "Food nutrients are mainly transported by plasma", "Oxygen forms a complex with hemoglobin called Oxy-hemoglobin", "Food nutrients forms a complex with plasma called plasma-F"], correct: "Food nutrients forms a complex with plasma called plasma-F" },
+  { question: "The blood vessels that carry blood away from the heart are called?", options: ["Vein", "Arteries", "Capillaries", "All of the options"], correct: "Arteries" },
+  { question: "Blood vessels with much more smooth muscle are the", options: ["Arteries", "Veins", "Capillaries", "None of the options"], correct: "Arteries" },
+  { question: "The venous part of the capillaries contains ............ blood.", options: ["Oxygenated", "Deoxygenated", "Carbonated", "None of the options"], correct: "Deoxygenated" },
+  { question: "The biggest artery in the body is the?", options: ["Aorta", "Subclavian", "Common carotid", "Common iliac"], correct: "Aorta" },
+  { question: "..................... is a flat bone.", options: ["Femur", "Scapula", "Tibia", "Calcaneus"], correct: "Scapula" },
+  { question: ".................. clean break in a bone.", options: ["Complex fracture", "Green-stick fracture", "Simple fracture", "Complicated fracture"], correct: "Simple fracture" },
+  { question: "Fluid found within the cells is called ........ fluid.", options: ["Cellular", "Cutaneous", "Intracellular", "Extracellular"], correct: "Intracellular" },
+  { question: "The following are body cavities EXCEPT", options: ["Intercellular", "Abdominal", "Pelvic", "Cranial"], correct: "Intercellular" },
+{
+    question: "The following are found in the abdominal cavity EXCEPT",
+    options: ["Liver", "Kidney", "Gall bladder", "Lungs"],
+    correct: "Lungs"
+  },
+  {
+    question: "The organelle that deals with metabolism of food is?",
+    options: ["Cell membrane", "Cytoplasm", "Mitochondrion", "Nucleus"],
+    correct: "Mitochondrion"
+  },
+  {
+    question: "The organelle that controls the activities of the cell is the?",
+    options: ["Cytoplasm", "Nucleus", "Golgi apparatus", "Nuclear membrane"],
+    correct: "Nucleus"
+  },
+  {
+    question: "Apart from synthesis of lipids, the rough endoplasmic reticulum also aids in ........",
+    options: ["Digestion of materials", "Duplication of the DNA", "Transport of ribosome", "Energy production"],
+    correct: "Transport of ribosome"
+  },
+  {
+    question: "The following processes are controlled through the negative feedback mechanism except",
+    options: ["Micturition", "Glucose homeostasis", "Temperature regulation", "Body fluid balance"],
+    correct: "Micturition"
+  },
+  {
+    question: "Homeostasis is control of constant .............",
+    options: ["Internal environment", "External environment", "All of the options", "None of the options"],
+    correct: "Internal environment"
+  },
+  {
+    question: "There are ................ types of cell division.",
+    options: ["1", "2", "3", "4"],
+    correct: "2"
+  },
+  {
+    question: "Production of sex cells is by?",
+    options: ["Mitosis", "Meiosis", "Metaplasia", "All of the options"],
+    correct: "Meiosis"
+  },
+  {
+    question: "............. daughter cells are formed in mitosis.",
+    options: ["1", "2", "3", "4"],
+    correct: "2"
+  },
+  {
+    question: "Epithelial tissues are involved in the following EXCEPT",
+    options: ["Form other tissues", "Form glands", "Line hollow organs", "Cover the entire body"],
+    correct: "Form other tissues"
+  },
+  {
+    question: "Transitional epithelial cells are found only in the ..............",
+    options: ["Kidney", "Eye", "Transcellular fluid", "Urinary bladder"],
+    correct: "Urinary bladder"
+  },
+  {
+    question: "Epithelium responsible for absorption of food in the gastrointestinal tract is .............",
+    options: ["Simple columnar with brush border", "Stratified columnar with brush border", "Pseudo-stratified epithelial cells", "Simple cuboidal epithelium"],
+    correct: "Simple columnar with brush border"
+  },
+  {
+    question: "The epithelial cells found in the heart is ............",
+    options: ["Simple squamous", "Simple columnar", "Simple cuboidal", "Transitional"],
+    correct: "Simple squamous"
+  },
+  {
+    question: "................. tissue is not a basic body tissue.",
+    options: ["Connective", "Adipose", "Muscular", "Nervous"],
+    correct: "Adipose"
+  },
+  {
+    question: "Adipocytes are found in .................",
+    options: ["Epidermis", "Dermis", "Hypodermis", "Liver"],
+    correct: "Hypodermis"
+  },
     {
       question: "Which organ pumps blood?",
       options: ["Liver", "Heart", "Lung", "Kidney"],
